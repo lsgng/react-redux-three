@@ -12,18 +12,18 @@ const runThreeApp = () => {
 
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshBasicMaterial({ color: 0xffa500 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+    const box = new THREE.Mesh(geometry, material);
+    scene.add(box);
 
     camera.position.z = 5;
 
-    const animate = function () {
-        requestAnimationFrame(animate);
-
-        cube.rotation.x += 0.05;
-        cube.rotation.y += 0.05;
+    const animate = () => {
+        box.rotation.x += 0.05;
+        box.rotation.y += 0.05;
 
         renderer.render(scene, camera);
+
+        requestAnimationFrame(animate);
     };
 
     animate();
