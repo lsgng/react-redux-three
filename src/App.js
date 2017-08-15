@@ -1,5 +1,7 @@
 import './App.css';
 
+import ThreeApp from './ThreeApp';
+
 import React from 'react';
 
 class App extends React.Component {
@@ -11,14 +13,14 @@ class App extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         {!this.state.running ? (
-          <div id='loading-screen' onClick={() => this.setState({running: true})}>
-            Loading
+          <div id='loading-screen' onClick={() => this.setState({ running: true })}>
+            Click to start!
           </div>
         ) : (
-            <div id='container'>Hello</div>
+            <ThreeApp />
           )}
       </div>
     );
