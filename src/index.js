@@ -1,6 +1,9 @@
+import './index.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import * as THREE from 'three';
+
 import App from './App';
 
 const init = () => console.log('init');
