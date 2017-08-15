@@ -3,4 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-ReactDOM.render(<App onClick={console.log("Test")}/>, document.getElementById('root'));
+const init = () => console.log('init');
+
+ReactDOM.render(<App init={init}/>, document.getElementById('root'));
