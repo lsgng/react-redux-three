@@ -1,3 +1,5 @@
+import './ThreeApp.css';
+
 import React from 'react';
 
 import runThreeApp from './runThreeApp';

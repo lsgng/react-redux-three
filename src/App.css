@@ -1,4 +1,4 @@
-html, body {
+body {
   height: 100%;
   margin: 0;
   overflow: hidden;
@@ -6,13 +6,13 @@ html, body {
 }
 
 #loading-screen {
+  background-color:  azure;
+  color: skyblue;
+  font-family: sans-serif;
+  font-size: 2em;
   height: 100%;
+  padding-top: 200px;
   position: absolute;
-  width: 100%;
-}
-
-#container {
-  height: 100%;
-  position: absolute;
+  text-align: center;
   width: 100%;
 }
