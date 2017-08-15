@@ -5,6 +5,12 @@ html, body {
   width: 100%;
 }
 
+#loading-screen {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
 #container {
   height: 100%;
   position: absolute;
