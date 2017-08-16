@@ -2,12 +2,13 @@ import './HomePage.css'
 
 import React from 'react'
 
+import StartPage from './StartPage'
+import ThreeApp from './ThreeApp'
+
 const HomePage = (props) => (
   <div>
-      <div id='loading-screen' className={props.running ? 'hidden' : ''} onClick={props.run}>
-        Click to start!
-      </div>
-      <div id='container' className={!props.running ? 'hidden' : ''}></div>
+      <StartPage running={props.running} run={props.run} />
+      <ThreeApp running={props.running} />
   </div>
 )
 
