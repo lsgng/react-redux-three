@@ -1,7 +1,7 @@
 import './index.css'
 
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import { Provider, connect } from 'react-redux'
 import { createStore } from 'redux'
 
@@ -9,7 +9,7 @@ import App from './App'
 
 import runThreeApp from './runThreeApp';
 
-const runAction = {type: 'RUN'}
+const runAction = { type: 'RUN' }
 
 const app = (state, action) => {
     switch (action.type) {
@@ -42,7 +42,7 @@ const MainApp = connect(
     mapDispatchTopProps
 )(App)
 
-ReactDOM.render(
+render(
     <Provider store={store}>
         <MainApp />
     </Provider>,
