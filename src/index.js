@@ -7,7 +7,7 @@ import { createStore } from 'redux'
 
 import app from './reducers'
 
-import App from './containers/App'
+import App from './components/App'
 
 const initialState = { running: false }
 
