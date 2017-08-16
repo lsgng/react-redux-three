@@ -7,11 +7,14 @@ import { createStore } from 'redux'
 
 import App from './App'
 
+import runThreeApp from './runThreeApp';
+
 const runAction = {type: 'RUN'}
 
 const app = (state, action) => {
     switch (action.type) {
         case 'RUN':
+            runThreeApp()
             return { running: true };
         default:
             return state
@@ -38,7 +41,6 @@ const MainApp = connect(
     mapStateToProps,
     mapDispatchTopProps
 )(App)
-
 
 ReactDOM.render(
     <Provider store={store}>
