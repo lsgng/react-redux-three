@@ -12,7 +12,7 @@ class ThreeApp extends React.Component {
 
     render() {
         return (
-            <div id='container'></div>
+            <div id='container' className={!this.props.running ? 'hidden' : ''}></div>
         );
     }
 }

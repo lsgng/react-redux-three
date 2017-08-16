@@ -16,3 +16,7 @@ body {
   text-align: center;
   width: 100%;
 }
+
+.hidden {
+  visibility: hidden;
+}

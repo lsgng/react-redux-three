@@ -6,13 +6,10 @@ import ThreeApp from './ThreeApp'
 
 const App = (props) => (
   <div>
-    {!props.running ? (
-      <div id='loading-screen' onClick={props.run}>
+      <div id='loading-screen' className={props.running ? 'hidden' : ''} onClick={props.run}>
         Click to start!
       </div>
-    ) : (
-        <ThreeApp />
-      )}
+     <ThreeApp running={props.running} />
   </div>
 )
 
