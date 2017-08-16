@@ -1,8 +1,8 @@
-import './App.css'
+import './MainApp.css'
 
 import React from 'react'
 
-const App = (props) => (
+const MainApp = (props) => (
   <div>
       <div id='loading-screen' className={props.running ? 'hidden' : ''} onClick={props.run}>
         Click to start!
@@ -11,4 +11,4 @@ const App = (props) => (
   </div>
 )
 
-export default App
+export default MainApp
