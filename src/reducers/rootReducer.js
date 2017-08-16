@@ -1,11 +1,13 @@
-import { combineReducers } from 'redux'
+import runThreeApp from '../threeApp/runThreeApp'
 
-import startPage from './startPage'
-import threeApp from './threeApp'
+const rootReducer = (state, action) => {
+    switch (action.type) {
+        case 'RUN':
+            runThreeApp()
+            return { running: true };
+        default:
+            return state
+    }
+}
 
-const rootReducer = combineReducers({
-    startPage,
-    threeApp,
-})
-
-export default rootReducer
+export default rootReducer;
