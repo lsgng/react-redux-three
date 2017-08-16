@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 
 import { run } from '../actions'
 
-import  MainApp from '../components/MainApp'
+import  HomePage from '../components/HomePage'
 
 const mapStateToProps = (state) => {
     return {
@@ -19,6 +19,6 @@ const mapDispatchTopProps = (dispatch) => {
 const App = connect(
     mapStateToProps,
     mapDispatchTopProps
-)(MainApp)
+)(HomePage)
 
 export default App

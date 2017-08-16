@@ -1,4 +1,4 @@
-import runThreeApp from '../runThreeApp'
+import runThreeApp from '../threeApp/runThreeApp'
 
 const app = (state, action) => {
     switch (action.type) {
