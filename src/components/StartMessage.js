@@ -1,8 +1,10 @@
+import './StartMessage.css'
+
 import React from 'react'
 
 const  StartMessage = ({running, run}) => (
   <div>
-      <div id='loading-screen' className={running ? 'hidden' : ''} onClick={run}>
+      <div className={!running ? 'start-message' : 'start-message hidden'} onClick={run}>
         Click to start!
       </div>
   </div>

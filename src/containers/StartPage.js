@@ -1,4 +1,4 @@
-// import './HomePage.css'
+//import './Page.css'
 
 import React from 'react'
 import { connect } from 'react-redux'

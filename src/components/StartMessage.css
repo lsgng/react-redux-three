@@ -1,0 +1,15 @@
+.start-message {
+    background-color:  azure;
+    color: skyblue;
+    font-family: sans-serif;
+    font-size: 2em;
+    height: 100%;
+    padding-top: 200px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+ 
+.hidden {
+    visibility: hidden;
+  }

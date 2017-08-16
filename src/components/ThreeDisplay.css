@@ -1,0 +1,9 @@
+.three-display{
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+.hidden {
+    visibility: hidden;
+}
