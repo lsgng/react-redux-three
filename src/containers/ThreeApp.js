@@ -25,6 +25,6 @@ const mapDispatchTopProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchTopProps
-)(ThreeDisplay)
+)(ThreeApp)
 
 

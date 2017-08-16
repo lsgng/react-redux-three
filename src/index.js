@@ -3,13 +3,20 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
-import app from './reducers'
+import rootReducer from './reducers/rootReducer'
 
 import App from './components/App'
 
-const initialState = { running: false }
+const initialState = {
+    startPage: {
+        running: false,
+    },
+    threeApp: {
 
-const store = createStore(app, initialState)
+    },
+}
+
+const store = createStore(rootReducer, initialState)
 
 render(
     <Provider store={store}>

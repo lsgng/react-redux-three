@@ -1,6 +1,6 @@
 import runThreeApp from '../threeApp/runThreeApp'
 
-const app = (state, action) => {
+const startPage = (state = null, action) => {
     switch (action.type) {
         case 'RUN':
             runThreeApp()
@@ -10,4 +10,4 @@ const app = (state, action) => {
     }
 }
 
-export default app;
+export default startPage;
