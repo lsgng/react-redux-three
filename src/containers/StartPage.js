@@ -1,5 +1,3 @@
-//import './Page.css'
-
 import React from 'react'
 import { connect } from 'react-redux'
 

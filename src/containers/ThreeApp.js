@@ -1,15 +1,23 @@
-// import './HomePage.css'
-
 import React from 'react'
 import { connect } from 'react-redux'
 
+import runThreeApp from '../threeApp/runThreeApp'
+
 import ThreeDisplay from '../components/ThreeDisplay'
 
-const ThreeApp = ({ running }) => (
-    <div>
-        <ThreeDisplay running={running} />
-    </div>
-)
+class ThreeApp extends React.Component {
+    componentDidMount() {
+        runThreeApp()
+    }
+
+    render() {
+        return (
+            <div>
+                <ThreeDisplay running={this.props.running} />
+            </div>
+        )
+    }
+}
 
 const mapStateToProps = (state) => {
     return {
