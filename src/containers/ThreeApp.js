@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import ThreeDisplay from '../components/ThreeDisplay'
 
-const ThreeApp = ({ running, run }) => (
+const ThreeApp = ({ running }) => (
     <div>
         <ThreeDisplay running={running} />
     </div>
