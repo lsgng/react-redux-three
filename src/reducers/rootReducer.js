@@ -2,7 +2,7 @@
 const rootReducer = (state, action) => {
     switch (action.type) {
         case 'RUN':
-            return { running: true };
+            return Object.assign({}, state, { running: true })
         default:
             return state
     }
