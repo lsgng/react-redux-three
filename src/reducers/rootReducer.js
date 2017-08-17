@@ -4,9 +4,14 @@ const rootReducer = (state, action) => {
         case 'RUN':
             return {
                 ...state,
-                running: true
+                running: true,
             }
-
+        case 'UPDATE':
+            return {
+                ...state,
+                timestamp: Date.now() - action.timestamp,
+                frame: state.frame += 1,
+            }
         default:
             return state
     }

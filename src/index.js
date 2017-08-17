@@ -8,12 +8,9 @@ import rootReducer from './reducers/rootReducer'
 import App from './components/App'
 
 const initialState = {
-    startPage: {
-        running: false,
-    },
-    threeApp: {
-
-    },
+    running: false,
+    timestamp: Date.now(),
+    frame: 0,
 }
 
 const store = createStore(rootReducer, initialState)

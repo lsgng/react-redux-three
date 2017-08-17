@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { update } from '../actions'
 import runThreeApp from '../threeApp/runThreeApp'
 
 import ThreeDisplay from '../components/ThreeDisplay'
@@ -22,11 +23,14 @@ class ThreeApp extends React.Component {
 const mapStateToProps = (state) => {
     return {
         running: state.running,
+        timestamp: state.timestamp,
+        frame: state.frame,
     }
 }
 
 const mapDispatchTopProps = (dispatch) => {
     return {
+        update: () => dispatch(update(Date.now()))
     }
 }
 

@@ -3,3 +3,10 @@ export const run = () => {
         type: 'RUN'
     }
 }
+
+export const update = (timestamp) => {
+    return {
+        type: 'UPDATE',
+        timestamp
+    }
+}
