@@ -1,3 +1,8 @@
+const rotate = (state) => {
+    const newState = { ...state }
+    newState.scene.getObjectByName('box').position.y = 2 * Math.sin(Date.now() / 10)
+    return newState
+}
 
 const rootReducer = (state, action) => {
     switch (action.type) {
@@ -7,11 +12,12 @@ const rootReducer = (state, action) => {
                 running: true,
             }
         case 'UPDATE':
-            return {
+            const newState = {
                 ...state,
                 timestamp: Date.now() - action.timestamp,
                 frame: state.frame += 1,
             }
+            return rotate(newState)
         default:
             return state
     }
