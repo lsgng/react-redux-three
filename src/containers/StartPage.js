@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { run } from '../actions'
-
 import StartMessage from '../components/StartMessage'
 
 const StartPage = ({running, run}) => (
