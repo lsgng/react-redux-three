@@ -3,15 +3,11 @@ import { connect } from 'react-redux'
 
 import ThreeDisplay from '../components/ThreeDisplay'
 
-class ThreeApp extends React.Component {
-    render() {
-        return (
-            <div>
-                <ThreeDisplay running={this.props.running} />
-            </div>
-        )
-    }
-}
+const ThreeApp = ({running}) => (
+    <div>
+        <ThreeDisplay running={running} />
+    </div>
+)
 
 const mapStateToProps = (state) => {
     return {
