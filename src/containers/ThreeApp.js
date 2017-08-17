@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { update } from '../actions'
 import runThreeApp from '../threeApp/runThreeApp'
 
 import ThreeDisplay from '../components/ThreeDisplay'
@@ -31,7 +30,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchTopProps = (dispatch) => {
     return {
-        update: () => dispatch(update(Date.now()))
     }
 }
 

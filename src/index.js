@@ -15,6 +15,15 @@ const initialState = {
 
 const store = createStore(rootReducer, initialState)
 
+const updateThreeApp =  () => {
+    const timestamp = Date.now()
+    requestAnimationFrame(() => store.dispatch({type: 'UPDATE', timestamp: timestamp}))
+}
+
+store.subscribe(updateThreeApp)
+
+store.dispatch({type: 'UPDATE'})
+
 render(
     <Provider store={store}>
         <App />
