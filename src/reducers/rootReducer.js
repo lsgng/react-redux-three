@@ -1,5 +1,5 @@
 const changeMaterial = (state) => {
-const newState = { ...state }
+    const newState = { ...state }
     newState.scene.getObjectByName('box').material.wireframe = !newState.scene.getObjectByName('box').material.wireframe
     return newState
 }
@@ -12,15 +12,26 @@ const rotate = (state) => {
 
 const rootReducer = (state, action) => {
     switch (action.type) {
-        case 'CHANGE_MATERIAL':
-            return state.running ? changeMaterial(state) : state
+        case 'CHANGE_MATERIAL': {
+            const newState = changeMaterial(state)
+            return {
+                ...newState,
+                lastAction: 'CHANGE_MATERIAL'
+            }
+        }
         case 'RUN':
             return {
                 ...state,
                 running: true,
+                lastAction: 'RUN',
             }
-        case 'UPDATE':
-            return rotate(state)
+        case 'UPDATE': {
+            const newState = rotate(state)
+            return {
+                ...newState,
+                lastAction: 'UPDATE',
+            }
+        }
         default:
             return state
     }
