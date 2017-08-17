@@ -8,7 +8,9 @@ import rootReducer from './reducers/rootReducer'
 
 import App from './components/App'
 
-import threeInitialState from './threeApp/threeInitialState'
+import { getThreeInitialState, getThreeRenderer } from './threeApp/threeApp'
+
+const threeInitialState = getThreeInitialState();
 
 const initialState = {
     running: false,
@@ -24,14 +26,10 @@ render(
     document.getElementById('root')
 )
 
-const container = document.getElementById('container');
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setClearColor(0xf0ffff)
-renderer.setSize(window.innerWidth, window.innerHeight);
-container.appendChild(renderer.domElement);
+const threeRenderer = getThreeRenderer()
 
 const updateThreeApp = () => {
-    renderer.render(store.getState().scene, store.getState().camera)
+    threeRenderer.render(store.getState().scene, store.getState().camera)
     const timestamp = Date.now()
     requestAnimationFrame(() => store.dispatch({ type: 'UPDATE', timestamp: timestamp }))
 }
