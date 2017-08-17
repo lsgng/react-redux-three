@@ -1,15 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import runThreeApp from '../threeApp/runThreeApp'
-
 import ThreeDisplay from '../components/ThreeDisplay'
 
 class ThreeApp extends React.Component {
-    componentDidMount() {
-        runThreeApp()
-    }
-
     render() {
         return (
             <div>
