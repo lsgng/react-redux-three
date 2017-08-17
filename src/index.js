@@ -41,3 +41,5 @@ const updateThreeApp = () => {
 store.subscribe(updateThreeApp)
 
 store.dispatch({ type: 'UPDATE' })
+
+document.addEventListener('click', () => store.dispatch({ type: 'CHANGE_MATERIAL' }));
