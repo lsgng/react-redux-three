@@ -6,6 +6,8 @@ import * as THREE from 'three'
 
 import rootReducer from './reducers/rootReducer'
 
+import { changeMaterial, update } from './actions'
+
 import App from './components/App'
 
 import { getThreeInitialState, getThreeRenderer } from './threeApp/threeApp'
@@ -32,12 +34,12 @@ const threeRenderer = getThreeRenderer()
 const updateThreeApp = () => {
     if (store.getState().lastAction === 'UPDATE') {
         threeRenderer.render(store.getState().scene, store.getState().camera)
-        requestAnimationFrame(() => store.dispatch({ type: 'UPDATE'}))
+        requestAnimationFrame(() => store.dispatch(update()))
     }
 }
 
 store.subscribe(updateThreeApp)
 
-store.dispatch({ type: 'UPDATE' })
+store.dispatch(update())
 
-document.addEventListener('click', () => store.dispatch({ type: 'CHANGE_MATERIAL' }));
+document.addEventListener('click', () => store.dispatch(changeMaterial()));
