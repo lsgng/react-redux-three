@@ -2,7 +2,6 @@ const changeMaterial = (state) => {
 const newState = { ...state }
     newState.scene.getObjectByName('box').material.wireframe = !newState.scene.getObjectByName('box').material.wireframe
     return newState
-
 }
 
 const rotate = (state) => {
@@ -21,12 +20,7 @@ const rootReducer = (state, action) => {
                 running: true,
             }
         case 'UPDATE':
-            const newState = {
-                ...state,
-                timestamp: Date.now() - action.timestamp,
-                frame: state.frame += 1,
-            }
-            return rotate(newState)
+            return rotate(state)
         default:
             return state
     }

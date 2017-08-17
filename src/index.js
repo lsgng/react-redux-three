@@ -12,8 +12,6 @@ import threeInitialState from './threeApp/threeInitialState'
 
 const initialState = {
     running: false,
-    timestamp: Date.now(),
-    frame: 0,
     ...threeInitialState
 }
 

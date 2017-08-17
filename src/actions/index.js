@@ -7,6 +7,5 @@ export const run = () => {
 export const update = (timestamp) => {
     return {
         type: 'UPDATE',
-        timestamp
     }
 }
