@@ -8,14 +8,13 @@ import { getThreeRenderer } from '../threeApp/threeApp'
 
 class ThreeApp extends React.Component {
     updateThreeApp = () => {
-        if (this.props.lastAction === 'UPDATE') {
             this.threeRenderer.render(this.props.scene, this.props.camera)
             requestAnimationFrame((timestamp) => this.props.update(timestamp))
-        }
     }
+
     componentDidMount() {
         this.threeRenderer = getThreeRenderer()
-        this.props.update()
+        this.updateThreeApp()
     }
 
     componentWillUpdate() {
@@ -38,6 +37,7 @@ class ThreeApp extends React.Component {
 const mapStateToProps = (state) => {
     return {
         running: state.running,
+        timestamp: state.timestamp,
         lastAction: state.lastAction,
         scene: state.scene,
         camera: state.camera,
