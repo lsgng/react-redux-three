@@ -23,11 +23,12 @@ const rootReducer = (state, action) => {
                 lastAction: 'RUN',
             }
         case 'UPDATE': {
-            const newState = updatePosition(state)
-            return {
-                ...newState,
+            const newState = {
+                ...state,
+                timestamp: action.timestamp,
                 lastAction: 'UPDATE',
             }
+           return updatePosition(newState)
         }
         default:
             return state

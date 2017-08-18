@@ -1,4 +1,4 @@
-export const fadeColor = (e) => {
+export const fadeColor = e => {
     return {
         type: 'FADE_COLOR',
         e,
@@ -7,18 +7,19 @@ export const fadeColor = (e) => {
 
 export const switchColor = () => {
     return {
-        type: 'SWITCH_COLOR'
+        type: 'SWITCH_COLOR',
     }
 }
 
 export const run = () => {
     return {
-        type: 'RUN'
+        type: 'RUN',
     }
 }
 
-export const update = () => {
+export const update = timestamp => {
     return {
-        type: 'UPDATE'
+        type: 'UPDATE',
+        timestamp,
     }
 }

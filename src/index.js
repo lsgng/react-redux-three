@@ -11,6 +11,7 @@ import { getThreeInitialState, getThreeRenderer } from './threeApp/threeApp'
 const threeInitialState = getThreeInitialState();
 
 const initialState = {
+    timestamp: 0,
     lastAction: '',
     running: false,
     ...threeInitialState
@@ -31,7 +32,7 @@ const threeRenderer = getThreeRenderer()
 const updateThreeApp = () => {
     if (store.getState().lastAction === 'UPDATE') {
         threeRenderer.render(store.getState().scene, store.getState().camera)
-        requestAnimationFrame(() => store.dispatch(update()))
+        requestAnimationFrame((timestamp) => store.dispatch(update(timestamp)))
     }
 }
 
