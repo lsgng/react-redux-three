@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { changeMaterial } from '../actions'
 import ThreeDisplay from '../components/ThreeDisplay'
 
-const ThreeApp = ({running}) => (
+const ThreeApp = ({running, changeMaterial}) => (
     <div>
-        <ThreeDisplay running={running} />
+        <ThreeDisplay running={running} changeMaterial={changeMaterial}/>
     </div>
 )
 
@@ -17,6 +18,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchTopProps = (dispatch) => {
     return {
+        changeMaterial: () => dispatch(changeMaterial()),
     }
 }
 

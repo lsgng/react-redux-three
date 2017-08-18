@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
-import { changeMaterial, update } from './actions'
+import { update } from './actions'
 import App from './components/App'
 import rootReducer from './reducers/rootReducer'
 import { getThreeInitialState, getThreeRenderer } from './threeApp/threeApp'
@@ -37,5 +37,3 @@ const updateThreeApp = () => {
 store.subscribe(updateThreeApp)
 
 store.dispatch(update())
-
-document.addEventListener('click', () => store.dispatch(changeMaterial()));
