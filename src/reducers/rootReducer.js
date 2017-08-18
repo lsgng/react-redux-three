@@ -1,14 +1,4 @@
-const changeMaterial = (state) => {
-    const newState = { ...state }
-    newState.scene.getObjectByName('box').material.wireframe = !newState.scene.getObjectByName('box').material.wireframe
-    return newState
-}
-
-const rotate = (state) => {
-    const newState = { ...state }
-    newState.scene.getObjectByName('box').position.y = 2 * Math.sin(Date.now() / 1000)
-    return newState
-}
+import { changeMaterial, rotate } from '../threeApp/threeActionHelpers'
 
 const rootReducer = (state, action) => {
     switch (action.type) {

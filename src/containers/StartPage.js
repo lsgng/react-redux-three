@@ -4,10 +4,13 @@ import { connect } from 'react-redux'
 import { run } from '../actions'
 import StartMessage from '../components/StartMessage'
 
-const StartPage = ({running, run}) => (
-  <div>
-      <StartMessage running={running} run={run} />
-  </div>
+const StartPage = ({ running, run }) => (
+    <div>
+        <StartMessage
+            running={running}
+            run={run}
+        />
+    </div>
 )
 
 const mapStateToProps = (state) => {

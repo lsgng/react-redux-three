@@ -25,6 +25,7 @@ render(
     document.getElementById('root')
 )
 
+// TODO: Move three renderer and rendering loop into ThreeApp component? Will this affect performance?
 const threeRenderer = getThreeRenderer()
 
 const updateThreeApp = () => {

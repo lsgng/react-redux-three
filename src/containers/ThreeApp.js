@@ -4,9 +4,12 @@ import { connect } from 'react-redux'
 import { changeMaterial } from '../actions'
 import ThreeDisplay from '../components/ThreeDisplay'
 
-const ThreeApp = ({running, changeMaterial}) => (
+const ThreeApp = ({ running, changeMaterial }) => (
     <div>
-        <ThreeDisplay running={running} changeMaterial={changeMaterial}/>
+        <ThreeDisplay
+            running={running}
+            changeMaterial={changeMaterial}
+        />
     </div>
 )
 
