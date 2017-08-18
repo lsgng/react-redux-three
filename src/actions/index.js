@@ -18,7 +18,6 @@ export const run = () => {
 }
 
 export const update = timestamp => {
-    console.log('Updating')
     return {
         type: 'UPDATE',
         timestamp,
