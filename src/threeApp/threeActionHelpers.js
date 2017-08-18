@@ -19,7 +19,7 @@ export const switchColor = (state) => {
     return newState
 }
 
-export const rotate = (state) => {
+export const updatePosition = (state) => {
     const newState = { ...state }
     //newState.scene.getObjectByName('box').position.y = 2 * Math.sin(Date.now() / 1000)
     return newState

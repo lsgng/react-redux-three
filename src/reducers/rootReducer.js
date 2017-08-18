@@ -1,4 +1,4 @@
-import { switchColor, fadeColor, rotate } from '../threeApp/threeActionHelpers'
+import { switchColor, fadeColor, updatePosition } from '../threeApp/threeActionHelpers'
 
 const rootReducer = (state, action) => {
     switch (action.type) {
@@ -23,7 +23,7 @@ const rootReducer = (state, action) => {
                 lastAction: 'RUN',
             }
         case 'UPDATE': {
-            const newState = rotate(state)
+            const newState = updatePosition(state)
             return {
                 ...newState,
                 lastAction: 'UPDATE',
