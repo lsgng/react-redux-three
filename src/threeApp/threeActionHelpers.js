@@ -12,7 +12,7 @@ export const fadeColor = (state, e) => {
 export const switchColor = (state) => {
     const newState = { ...state }
     const newChildren = state.scene.children.map((child) => {
-        child.material.color.g = Math.random() * 0.5  + 0.5
+        child.material.color.g = Math.random() * 0.5 + 0.5
         return child
     })
     newState.children = newChildren
@@ -21,6 +21,10 @@ export const switchColor = (state) => {
 
 export const updatePosition = (state) => {
     const newState = { ...state }
-    //newState.scene.getObjectByName('box').position.y = 2 * Math.sin(Date.now() / 1000)
+    const newChildren = state.scene.children.map((child) => {
+        child.position.z = 2 * Math.sin(Date.now() / 1000)
+        return child
+    })
+    newState.children = newChildren
     return newState
 }
