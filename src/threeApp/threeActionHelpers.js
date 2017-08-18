@@ -20,6 +20,7 @@ export const switchColor = (state) => {
 }
 
 export const updatePosition = (state) => {
+    console.log('Updating position')
     const newState = { ...state }
     const newChildren = state.scene.children.map((child) => {
         child.position.z = 2 * Math.sin(state.timestamp / 1000 + (child.position.x / 10) + (child.position.y / 10))
