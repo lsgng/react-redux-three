@@ -7,18 +7,18 @@ import { getThreeRenderer } from '../threeApp/threeApp'
 
 
 class ThreeApp extends React.Component {
-    updateThreeApp = () => {
+    renderNextFrame = () => {
             this.threeRenderer.render(this.props.scene, this.props.camera)
             requestAnimationFrame((timestamp) => this.props.update(timestamp))
     }
 
     componentDidMount() {
         this.threeRenderer = getThreeRenderer()
-        this.updateThreeApp()
+        this.renderNextFrame()
     }
 
     componentWillUpdate() {
-        this.updateThreeApp()
+        this.renderNextFrame()
     }
 
     render() {
