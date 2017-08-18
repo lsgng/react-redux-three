@@ -4,6 +4,13 @@ export const changeMaterial = () => {
     }
 }
 
+export const changeSize = (e) => {
+    return {
+        type: 'CHANGE_SIZE',
+        e,
+    }
+}
+
 export const run = () => {
     return {
         type: 'RUN'

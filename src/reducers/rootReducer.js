@@ -1,4 +1,4 @@
-import { changeMaterial, rotate } from '../threeApp/threeActionHelpers'
+import { changeMaterial, changeSize, rotate } from '../threeApp/threeActionHelpers'
 
 const rootReducer = (state, action) => {
     switch (action.type) {
@@ -7,6 +7,13 @@ const rootReducer = (state, action) => {
             return {
                 ...newState,
                 lastAction: 'CHANGE_MATERIAL'
+            }
+        }
+        case 'CHANGE_SIZE': {
+            const newState = changeSize(state, action.e)
+            return {
+                ...newState,
+                lastAction: 'CHANGE_SIZE'
             }
         }
         case 'RUN':
