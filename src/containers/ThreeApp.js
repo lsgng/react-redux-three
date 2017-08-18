@@ -1,15 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { changeMaterial, changeSize } from '../actions'
+import { switchColor, fadeColor } from '../actions'
 import ThreeDisplay from '../components/ThreeDisplay'
 
-const ThreeApp = ({ running, changeMaterial, changeSize }) => (
+const ThreeApp = ({ running, switchColor, fadeColor }) => (
     <div>
         <ThreeDisplay
             running={running}
-            changeMaterial={changeMaterial}
-            changeSize={changeSize}
+            switchColor={switchColor}
+            fadeColor={fadeColor}
         />
     </div>
 )
@@ -22,8 +22,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchTopProps = (dispatch) => {
     return {
-        changeMaterial: () => dispatch(changeMaterial()),
-        changeSize: e => dispatch(changeSize(e)),
+        switchColor: () => dispatch(switchColor()),
+        fadeColor: e => dispatch(fadeColor(e)),
     }
 }
 

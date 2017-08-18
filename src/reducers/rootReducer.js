@@ -1,19 +1,19 @@
-import { changeMaterial, changeSize, rotate } from '../threeApp/threeActionHelpers'
+import { switchColor, fadeColor, rotate } from '../threeApp/threeActionHelpers'
 
 const rootReducer = (state, action) => {
     switch (action.type) {
-        case 'CHANGE_MATERIAL': {
-            const newState = changeMaterial(state)
+        case 'SWITCH_COLOR': {
+            const newState = switchColor(state)
             return {
                 ...newState,
-                lastAction: 'CHANGE_MATERIAL'
+                lastAction: 'SWITCH_COLOR'
             }
         }
-        case 'CHANGE_SIZE': {
-            const newState = changeSize(state, action.e)
+        case 'FADE_COLOR': {
+            const newState = fadeColor(state, action.e)
             return {
                 ...newState,
-                lastAction: 'CHANGE_SIZE'
+                lastAction: 'FADE_COLOR'
             }
         }
         case 'RUN':

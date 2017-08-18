@@ -1,4 +1,4 @@
-export const changeMaterial = (state) => {
+export const switchColor = (state) => {
     const newState = { ...state }
     const newChildren = state.scene.children.map((child) => {
         child.material.color.g = Math.random() * 0.5  + 0.5
@@ -8,11 +8,11 @@ export const changeMaterial = (state) => {
     return newState
 }
 
-export const changeSize = (state, e) => {
+export const fadeColor = (state, e) => {
     const newState = { ...state }
-    const mouseX = e.nativeEvent.clientX / window.innerWidth
     const newChildren = state.scene.children.map((child) => {
-        child.position.z = 1 + (10 * mouseX)
+        child.material.color.r = e.nativeEvent.clientX / window.innerWidth
+        child.material.color.b = e.nativeEvent.clientY / window.innerHeight
         return child
     })
     newState.children = newChildren

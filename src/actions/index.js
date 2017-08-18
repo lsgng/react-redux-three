@@ -1,12 +1,12 @@
-export const changeMaterial = () => {
+export const switchColor = () => {
     return {
-        type: 'CHANGE_MATERIAL'
+        type: 'SWITCH_COLOR'
     }
 }
 
-export const changeSize = (e) => {
+export const fadeColor = (e) => {
     return {
-        type: 'CHANGE_SIZE',
+        type: 'FADE_COLOR',
         e,
     }
 }
