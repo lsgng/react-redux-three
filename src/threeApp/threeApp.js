@@ -9,7 +9,7 @@ export const getThreeCamera = () => {
     return camera
 }
 
-export const getThreeInitialState = () => {
+export const getInitialSceneState = () => {
 
     const initialState = {
         spheres: {
