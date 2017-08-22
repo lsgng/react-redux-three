@@ -21,6 +21,10 @@ class ThreeApp extends React.Component {
         this.renderNextFrame()
     }
 
+    shouldComponentUpdate(nextProps) {
+        return nextProps.lastAction === 'UPDATE'
+    }
+
     componentWillUpdate() {
         mapStateToScene(this.props.sceneState, this.scene)
         this.renderNextFrame()
