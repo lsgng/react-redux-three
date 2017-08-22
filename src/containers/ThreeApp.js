@@ -22,7 +22,7 @@ class ThreeApp extends React.Component {
     }
 
     componentWillUpdate() {
-        mapStateToScene(this.props.spheres, this.scene)
+        mapStateToScene(this.props.sceneState, this.scene)
         this.renderNextFrame()
     }
 
@@ -44,7 +44,7 @@ const mapStateToProps = (state) => {
         running: state.running,
         timestamp: state.timestamp,
         lastAction: state.lastAction,
-        spheres: state.spheres,
+        sceneState: state.scene,
     }
 }
 

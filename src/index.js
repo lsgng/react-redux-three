@@ -13,7 +13,7 @@ const initialState = {
     running: false,
     timestamp: 0,
     lastAction: '',
-    ...threeInitialState
+    scene: threeInitialState
 }
 
 const store = createStore(rootReducer, initialState)
