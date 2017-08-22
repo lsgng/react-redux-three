@@ -1,21 +1,21 @@
 export const fadeColor = (state, e) => {
     const newState = { ...state }
-    /*const newChildren = state.scene.children.map((child) => {
-        child.material.color.r = e.nativeEvent.clientX / window.innerWidth
-        child.material.color.b = e.nativeEvent.clientY / window.innerHeight
-        return child
+    const newColors = state.scene.spheres.colors.map((color) => {
+        color.r = e.nativeEvent.clientX / window.innerWidth
+        color.b = e.nativeEvent.clientY / window.innerHeight
+        return color
     })
-    newState.children = newChildren*/
+    newState.colors = newColors
     return newState
 }
 
 export const switchColor = (state) => {
     const newState = { ...state }
-    /*const newChildren = state.scene.children.map((child) => {
-        child.material.color.g = Math.random() * 0.5 + 0.5
-        return child
+    const newColors = state.scene.spheres.colors.map((color) => {
+        color.g = Math.random() * 0.5 + 0.5
+        return color
     })
-    newState.children = newChildren*/
+    newState.colors = newColors
     return newState
 }
 

@@ -13,6 +13,7 @@ export const getInitialSceneState = () => {
 
     const initialState = {
         spheres: {
+            colors: [],
             positions: [],
         },
     }
@@ -22,6 +23,8 @@ export const getInitialSceneState = () => {
             const positionX = x * 4
             const positionY = y * 4
             initialState.spheres.positions.push({ x: positionX, y: positionY, z: 0 })
+
+            initialState.spheres.colors.push({r: 1, g: 0.65, b: 0})
         }
     }
     return initialState
