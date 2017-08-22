@@ -4,12 +4,13 @@ import { connect } from 'react-redux'
 import { fadeColor, switchColor, update } from '../actions'
 import ThreeDisplay from '../components/ThreeDisplay'
 import { getThreeCamera, getThreeRenderer, getThreeScene } from '../threeApp/threeApp'
+import { mapStateToScene } from '../threeApp/threeHelpers'
 
 
 class ThreeApp extends React.Component {
     renderNextFrame = () => {
-            this.threeRenderer.render(this.scene, this.camera)
-            requestAnimationFrame((timestamp) => this.props.update(timestamp))
+        this.threeRenderer.render(this.scene, this.camera)
+        requestAnimationFrame((timestamp) => this.props.update(timestamp))
     }
 
     componentDidMount() {
@@ -21,6 +22,7 @@ class ThreeApp extends React.Component {
     }
 
     componentWillUpdate() {
+        mapStateToScene(this.props.spheres, this.scene)
         this.renderNextFrame()
     }
 
@@ -42,8 +44,7 @@ const mapStateToProps = (state) => {
         running: state.running,
         timestamp: state.timestamp,
         lastAction: state.lastAction,
-        scene: state.scene,
-        camera: state.camera,
+        spheres: state.spheres,
     }
 }
 
