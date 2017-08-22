@@ -9,6 +9,25 @@ export const getThreeCamera = () => {
     return camera
 }
 
+export const getThreeInitialState = () => {
+
+    const initialState = {
+        spheres: {},
+    }
+
+    for (let y = 0; y < 20; y++) {
+        for (let x = 0; x < 20; x++) {
+            const index = x + (y * 20)
+            initialState.spheres[index] = {}
+            initialState.spheres[index].position = {}
+            initialState.spheres[index].position.x = x * 4
+            initialState.spheres[index].position.y = y * 4
+        }
+    }
+
+    return initialState
+}
+
 export const getThreeRenderer = () => {
     const container = document.getElementById('container')
     const renderer = new THREE.WebGLRenderer({ antialias: true })

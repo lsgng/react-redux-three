@@ -5,9 +5,10 @@ import { createStore } from 'redux'
 
 import App from './components/App'
 import rootReducer from './reducers/rootReducer'
-// import { getThreeInitialState } from './threeApp/threeApp'
+import { getThreeInitialState } from './threeApp/threeApp'
 
-// const threeInitialState = getThreeInitialState();
+const threeInitialState = getThreeInitialState();
+console.log(threeInitialState)
 
 const initialState = {
     running: false,
