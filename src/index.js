@@ -5,15 +5,15 @@ import { createStore } from 'redux'
 
 import App from './components/App'
 import rootReducer from './reducers/rootReducer'
-import { getThreeInitialState } from './threeApp/threeApp'
+// import { getThreeInitialState } from './threeApp/threeApp'
 
-const threeInitialState = getThreeInitialState();
+// const threeInitialState = getThreeInitialState();
 
 const initialState = {
     running: false,
     timestamp: 0,
     lastAction: '',
-    ...threeInitialState
+//    ...threeInitialState
 }
 
 const store = createStore(rootReducer, initialState)

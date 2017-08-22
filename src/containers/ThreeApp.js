@@ -3,17 +3,20 @@ import { connect } from 'react-redux'
 
 import { fadeColor, switchColor, update } from '../actions'
 import ThreeDisplay from '../components/ThreeDisplay'
-import { getThreeRenderer } from '../threeApp/threeApp'
+import { getThreeCamera, getThreeRenderer, getThreeScene } from '../threeApp/threeApp'
 
 
 class ThreeApp extends React.Component {
     renderNextFrame = () => {
-            this.threeRenderer.render(this.props.scene, this.props.camera)
+            this.threeRenderer.render(this.scene, this.camera)
             requestAnimationFrame((timestamp) => this.props.update(timestamp))
     }
 
     componentDidMount() {
+        this.scene = getThreeScene()
+        this.camera = getThreeCamera()
         this.threeRenderer = getThreeRenderer()
+
         this.renderNextFrame()
     }
 
