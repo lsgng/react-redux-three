@@ -12,21 +12,18 @@ export const getThreeCamera = () => {
 export const getThreeInitialState = () => {
 
     const initialState = {
-        spheres: {},
+        spheres: {
+            positions: [],
+        },
     }
 
     for (let y = 0; y < 20; y++) {
         for (let x = 0; x < 20; x++) {
-            const index = x + (y * 20)
-            initialState.spheres[index] = {
-                position: {
-                },
-            }
-            initialState.spheres[index].position.x = x * 4
-            initialState.spheres[index].position.y = y * 4
+            const positionX = x * 4
+            const positionY = y * 4
+            initialState.spheres.positions.push({ x: positionX, y: positionY, z: 0 })
         }
     }
-
     return initialState
 }
 

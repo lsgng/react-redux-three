@@ -21,10 +21,10 @@ export const switchColor = (state) => {
 
 export const updatePosition = (state) => {
     const newState = { ...state }
-    /*const newChildren = state.scene.children.map((child) => {
-        child.position.z = 2 * Math.sin(Date.now() / 1000 + (child.position.x / 10) + (child.position.y / 10))
-        return child
+    const newPositions = state.spheres.positions.map((position) => {
+        position.z = 2 * Math.sin(Date.now() / 1000 + (position.x / 10) + (position.y / 10))
+        return position
     })
-    newState.children = newChildren*/
+    newState.spheres.positions = newPositions
     return newState
 }
