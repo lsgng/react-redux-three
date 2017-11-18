@@ -1,16 +1,22 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
-import { fadeColor, switchColor, update } from '../actions'
+import {update} from '../actions'
+
 import ThreeDisplay from '../components/ThreeDisplay'
-import { getThreeCamera, getThreeRenderer, getThreeScene } from '../threeApp/threeApp'
-import { mapStateToScene } from '../threeApp/threeHelpers'
 
+import {
+    getThreeCamera,
+    getThreeRenderer,
+    getThreeScene
+} from '../threeApp/threeApp'
+
+import {mapStateToScene} from '../threeApp/threeHelpers'
 
 class ThreeApp extends React.Component {
     renderNextFrame = () => {
         this.threeRenderer.render(this.scene, this.camera)
-        requestAnimationFrame((timestamp) => this.props.update(timestamp))
+        requestAnimationFrame(timestamp => this.props.update(timestamp))
     }
 
     componentDidMount() {
@@ -33,34 +39,24 @@ class ThreeApp extends React.Component {
     render() {
         return (
             <div>
-                <ThreeDisplay
-                    running={this.props.running}
-                    fadeColor={this.props.fadeColor}
-                    switchColor={this.props.switchColor}
-                />
+                <ThreeDisplay />
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
-        running: state.running,
         timestamp: state.timestamp,
         lastAction: state.lastAction,
-        sceneState: state.scene,
+        sceneState: state.scene
     }
 }
 
-const mapDispatchTopProps = (dispatch) => {
+const mapDispatchTopProps = dispatch => {
     return {
-        fadeColor: e => dispatch(fadeColor(e)),
-        switchColor: () => dispatch(switchColor()),
-        update: timestamp => dispatch(update(timestamp)),
+        update: timestamp => dispatch(update(timestamp))
     }
 }
 
-export default connect(
-    mapStateToProps,
-    mapDispatchTopProps
-)(ThreeApp)
+export default connect(mapStateToProps, mapDispatchTopProps)(ThreeApp)
