@@ -7,12 +7,12 @@ import {fadeColor, switchColor} from '../actions'
 
 class ThreeDisplay extends React.Component {
     shouldComponentUpdate() {
-        return  true
+        return this.props.lastAction === 'RUN' || 'UPDATE'
     }
 
     componentWillUpdate() {
         console.log('ThreeDisplay will update')
-        console.log(this.props.lastAction)
+        console.log('Last action: ' + this.props.lastAction)
     }
 
     render() {
