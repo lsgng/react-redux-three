@@ -6,11 +6,20 @@ import {connect} from 'react-redux'
 import {fadeColor, switchColor} from '../actions'
 
 class ThreeDisplay extends React.Component {
-    shouldComponentUpdate() {
-        return this.props.lastAction === 'RUN' || 'UPDATE'
+    shouldComponentUpdate(nextProps) {
+        const shouldUpdate = nextProps.lastAction === 'RUN' || 'UPDATE'
+
+        if (!shouldUpdate) {
+            // This never gets logged, even if nextProps.lastAction is not 'RUN' or 'UPDATE'
+            console.log('ThreeDisplay will not update')
+            console.log('Last action: ' + nextProps.lastAction)
+        }
+
+        return shouldUpdate
     }
 
     componentWillUpdate() {
+        // This gets logged even if this.props.lastAction is not 'RUN' or 'UPDATE
         console.log('ThreeDisplay will update')
         console.log('Last action: ' + this.props.lastAction)
     }
